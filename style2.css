@@ -825,23 +825,6 @@ img {
     align-items: start;
 }
 
-.about-you {
-    font-style: italic;
-    color: var(--accent);
-    font-weight: 400;
-}
-
-.about-deck {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-style: italic;
-    font-size: clamp(17px, 1.5vw, 20px);
-    line-height: 1.5;
-    color: var(--text-secondary);
-    margin-top: 16px;
-    max-width: 560px;
-}
-
 .about-para {
     font-family: var(--font-display);
     font-weight: 400;
