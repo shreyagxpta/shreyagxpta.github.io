@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreya Gupta to Data Scientist</title>
+    <meta name="description" content="Shreya Gupta, Data Scientist working in experimentation, causal inference, and applied AI. Previously Meta Reality Labs / Meta AI glasses; UC Berkeley.">
+
+    <!-- Fonts: Fraunces (serif display) + IBM Plex Sans/Mono (body + tech labels) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Sticky nav with persistent Resume CTA -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#home" class="nav-brand">SG</a>
+            <ul class="nav-links">
+                <li><a href="#meta">DS @ Meta</a></li>
+                <li><a href="#research">Research &amp; Impact</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">Beyond the Work</a></li>
+            </ul>
+            <a href="Shreya_Gupta_Post_Meta_Final_Resume.pdf" class="nav-cta" download>
+                <span>Resume</span>
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                    <path d="M3 6L6 9L9 6M6 9V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ====================== HERO ====================== -->
+    <section id="home" class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <p class="kicker">Data Scientist</p>
+                <h1 class="hero-name">Shreya Gupta</h1>
+                <p class="hero-tagline">
+                    A year into industry, the thing that keeps me hooked on data science is that the role itself is being redrawn. AI can produce metrics, but it takes a person to weigh trade-offs, push back on flawed framing, and turn analysis into a decision someone can act on.
+                </p>
+                <p class="hero-meta">
+                    Most recently at <span class="hero-meta-accent">Meta Reality Labs</span>, on Meta AI glasses. Berkeley grad in Data Science (Honors) and Computer Science.
+                </p>
+                <div class="hero-ctas">
+                    <a href="Shreya_Gupta_Post_Meta_Final_Resume.pdf" class="btn btn-primary" download>
+                        Download resume
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <path d="M3.5 7L7 10.5L10.5 7M7 10.5V2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#meta" class="btn btn-secondary">
+                        See my Meta work
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <path d="M3 7H11M11 7L7.5 3.5M11 7L7.5 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-image-wrap">
+                <!--
+                    IMAGE SWAP: replace src below with your Meta-glasses photo when ready.
+                    Recommended filename: meta-glasses.jpg
+                    Recommended aspect: portrait or square, at least 600px on the short side.
+                -->
+                <img src="honors.png" alt="Shreya Gupta" class="hero-image">
+                <div class="hero-image-frame" aria-hidden="true"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== DS @ META ====================== -->
+    <section id="meta" class="section">
+        <div class="section-inner">
+
+            <div class="section-header">
+                <p class="kicker">01 / DS @ Meta</p>
+                <h2 class="section-title">What I worked on, and what working on it taught me.</h2>
+            </div>
+
+            <!-- PHILOSOPHY -->
+            <div class="philosophy">
+                <h3 class="philosophy-heading">The role is being redrawn, not eliminated.</h3>
+                <div class="philosophy-body">
+                    <p>I&rsquo;m a genuine AI proponent. I use AI-native workflows every day, and I think they&rsquo;re transformative for how analysis gets done. AI handles the parts of the job that used to take the most time: pulling the data, writing the query, scaffolding the chart.</p>
+                    <p>What AI still doesn&rsquo;t do well is the part that actually matters. Knowing what question to ask. What a finding means for the business. Which trade-offs are worth making. Models still hallucinate. They lack the contextual framing to recognize when a metric is measuring the wrong thing. They&rsquo;ll happily produce a confident answer to a question that shouldn&rsquo;t have been asked in the first place.</p>
+                    <p>So the most valuable thing I bring isn&rsquo;t query-writing speed (AI handles that). It&rsquo;s the framing. The pushback. The willingness to say <em>this metric doesn&rsquo;t capture what we actually care about</em>, and then go define one that does. That&rsquo;s the part I find most interesting, and increasingly, where I think the role is heading.</p>
+                </div>
+            </div>
+
+            <!-- WORK CONTEXT -->
+            <p class="work-context">
+                At Meta Reality Labs, I worked on Meta AI glasses: first on <strong>Assistive Tech</strong> (features for users with disabilities), then on <strong>Capture Experiences</strong> (photo and video capture on the glasses).
+            </p>
+
+            <!-- WORK CARDS -->
+            <div class="work-grid">
+
+                <article class="work-card">
+                    <div class="work-card-num">01</div>
+                    <h4 class="work-card-title">Shipped A/B experiments</h4>
+                    <p class="work-card-body">
+                        Drove data-backed product decisions on the Meta AI glasses capture stack, used by millions of users worldwide. Led the experiment analysis behind the 60FPS video rollout across all device generations. On a capture power throttling test, identified that the stat-sig lift was concentrated on older device generations and recommended device-specific policies to unlock additional engagement on newer ones. On Hyperlapse and Slow-Motion via voice commands, partnered with cross-functional teams to ship as the right business call despite a neutral experiment outcome.
+                    </p>
+                    <p class="work-card-tag">Experimentation · A/B testing at scale</p>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-card-num">02</div>
+                    <h4 class="work-card-title">Defining what &ldquo;success&rdquo; meant</h4>
+                    <p class="work-card-body">
+                        Redefined the canonical end-to-end capture success metric, replacing an approach that systematically misreported success (in the process of being adopted as the team standard for capture reporting). On Assistive Tech, reframed success measurement to device-level retention, which became the new team strategy and surfaced a 3-feature combination within the Blind and Low Vision community that drove disproportionately high retention.
+                    </p>
+                    <p class="work-card-tag">Metric definition · product framing</p>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-card-num">03</div>
+                    <h4 class="work-card-title">Causal inference for strategy</h4>
+                    <p class="work-card-body">
+                        Authored the Capture Engagement Lever Analysis to investigate why weekly capture engagement was flat despite strong WAU growth. Decomposed engagement by demographics, weekday vs. weekend usage, non-capture feature usage, and downstream retention; applied causal inference to confirm a relationship between non-capture feature usage and capture engagement. Recommended shifting team goaling from adoption to depth-of-engagement metrics. The analysis directly shaped 2026 H2 strategy and roadmap.
+                    </p>
+                    <p class="work-card-tag">Causal inference · lever decomposition</p>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-card-num">04</div>
+                    <h4 class="work-card-title">Applied AI on real user behavior</h4>
+                    <p class="work-card-body">
+                        Authored the first AI-powered content classification study on Meta AI glasses photo captures: 714K images across 34 content categories. Found that most users capture only one type of content, while users capturing multiple content types are meaningfully more weekly-active, validated against control groups with similar device usage patterns.
+                    </p>
+                    <p class="work-card-tag">Applied AI · behavioral analysis</p>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-card-num">05</div>
+                    <h4 class="work-card-title">Diagnosed a firmware regression</h4>
+                    <p class="work-card-body">
+                        Identified and root-caused a firmware-rollout regression that caused a sharp spike in capture errors across all device types. Established device-coverage requirements that prior analyses had missed for a substantial share of affected users. The kind of cross-stack work that requires both data instinct and a model of how the system actually fits together.
+                    </p>
+                    <p class="work-card-tag">Production debugging · cross-stack</p>
+                </article>
+
+                <article class="work-card">
+                    <div class="work-card-num">06</div>
+                    <h4 class="work-card-title">AI-native workflows in practice</h4>
+                    <p class="work-card-body">
+                        Leveraged internal AI agents integrated with Claude, Gemini, and ChatGPT to deliver 3 simultaneous experiment deep-dives in under 2 weeks, including query generation, validation, and rapid onboarding to new systems. The leverage isn&rsquo;t in letting AI do the analysis. It&rsquo;s in letting AI handle the mechanical parts so the human work (framing, judgment, pushback) gets more of the day.
+                    </p>
+                    <p class="work-card-tag">AI-native workflows</p>
+                </article>
+
+            </div>
+
+            <p class="closing-line">
+                AI is the multiplier. The data scientist is the one deciding what to multiply, what the result actually means, and what to do about it. That&rsquo;s the version of the role I&rsquo;m building toward.
+            </p>
+
+            <!-- ============ INTERACTIVE RESUME (inside DS @ Meta tab as requested) ============ -->
+            <div class="resume-block">
+                <p class="kicker">Career timeline</p>
+                <h3 class="resume-heading">The full path here, in roles.</h3>
+                <p class="resume-sub">Click any role to expand. The most recent is open by default.</p>
+
+                <div class="timeline">
+
+                    <!-- Meta -->
+                    <details class="role" open>
+                        <summary class="role-summary">
+                            <div class="role-summary-left">
+                                <span class="role-dot"></span>
+                                <div>
+                                    <h4 class="role-title">Data Scientist</h4>
+                                    <p class="role-org">Meta · Reality Labs (Wearables)</p>
+                                </div>
+                            </div>
+                            <div class="role-summary-right">
+                                <span class="role-dates">Jun 2025 to Present</span>
+                                <span class="role-chevron" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M3.5 5.5L7 9L10.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="role-body">
+                            <p class="role-meta">Capture Experiences, Meta AI Glasses (Oct 2025 to Present)<br>Assistive Tech (Jun to Sept 2025)</p>
+                            <ul class="role-bullets">
+                                <li>Drove data-backed product decisions on the Meta AI glasses capture stack, used by millions of users worldwide. Shipped 60FPS video rollout, device-targeted capture power throttling, and Hyperlapse / Slow-Motion via voice commands.</li>
+                                <li>Authored the Capture Engagement Lever Analysis using causal inference; shaped 2026 H2 strategy and roadmap.</li>
+                                <li>Authored the first AI-powered content classification study on Meta AI glasses photo captures (714K images, 34 categories).</li>
+                                <li>Redefined the canonical end-to-end capture success metric, in process of adoption as the team standard.</li>
+                                <li>Diagnosed and root-caused a firmware-rollout capture-error regression across all device types.</li>
+                                <li>Leveraged internal AI agents integrated with Claude, Gemini, and ChatGPT to deliver 3 simultaneous experiment deep-dives in under 2 weeks.</li>
+                                <li>On Assistive Tech, reframed success measurement to device-level retention (adopted as new team strategy); identified a 3-feature combination within the Blind and Low Vision community driving disproportionately high retention.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <!-- TechCarrot -->
+                    <details class="role">
+                        <summary class="role-summary">
+                            <div class="role-summary-left">
+                                <span class="role-dot"></span>
+                                <div>
+                                    <h4 class="role-title">Software Engineering &amp; Data Analyst Intern</h4>
+                                    <p class="role-org">TechCarrot · Digital Transformation Solutions</p>
+                                </div>
+                            </div>
+                            <div class="role-summary-right">
+                                <span class="role-dates">May to Aug 2024</span>
+                                <span class="role-chevron" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M3.5 5.5L7 9L10.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="role-body">
+                            <p class="role-meta">Dubai, UAE</p>
+                            <ul class="role-bullets">
+                                <li>Prototyped retrieval-augmented LLM applications for enterprise clients using LlamaIndex and OpenAI APIs with Flask.</li>
+                                <li>Built an ETL pipeline in Spark and a Power BI dashboard on Microsoft Fabric for Ducab (global energy provider).</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <!-- Data 100 Head TA -->
+                    <details class="role">
+                        <summary class="role-summary">
+                            <div class="role-summary-left">
+                                <span class="role-dot"></span>
+                                <div>
+                                    <h4 class="role-title">Head Teaching Assistant, Data 100</h4>
+                                    <p class="role-org">UC Berkeley · Principles &amp; Techniques of Data Science</p>
+                                </div>
+                            </div>
+                            <div class="role-summary-right">
+                                <span class="role-dates">Aug 2023 to Dec 2024</span>
+                                <span class="role-chevron" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M3.5 5.5L7 9L10.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="role-body">
+                            <p class="role-meta">Berkeley, CA · 1000+ students per semester, the largest upper-division CS course on campus</p>
+                            <ul class="role-bullets">
+                                <li>Coordinated course logistics for 1,000+ students and co-authored exams with faculty.</li>
+                                <li>Led instruction on OLS, logistic regression, regularization, gradient descent, cross-validation, EDA, and clustering.</li>
+                                <li>Automated lecture-attendance grading in Python.</li>
+                                <li>Taught discussions for 200+ students directly across five semesters.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <!-- Arta Finance -->
+                    <details class="role">
+                        <summary class="role-summary">
+                            <div class="role-summary-left">
+                                <span class="role-dot"></span>
+                                <div>
+                                    <h4 class="role-title">Research &amp; Software Engineering Intern</h4>
+                                    <p class="role-org">Arta Finance · Quantitative Finance</p>
+                                </div>
+                            </div>
+                            <div class="role-summary-right">
+                                <span class="role-dates">May to Aug 2023</span>
+                                <span class="role-chevron" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M3.5 5.5L7 9L10.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="role-body">
+                            <p class="role-meta">Mountain View, CA</p>
+                            <ul class="role-bullets">
+                                <li>Developed Java-based portfolio construction software using MSCI Barra multivariate risk-factor analysis with optimization and noise-reduction techniques.</li>
+                                <li>Collaborated with engineering on scalability using Bazel, Redis, and Protocol Buffers.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <!-- Berkeley -->
+                    <details class="role">
+                        <summary class="role-summary">
+                            <div class="role-summary-left">
+                                <span class="role-dot"></span>
+                                <div>
+                                    <h4 class="role-title">B.A. Data Science (Honors) &amp; B.A. Computer Science</h4>
+                                    <p class="role-org">University of California, Berkeley</p>
+                                </div>
+                            </div>
+                            <div class="role-summary-right">
+                                <span class="role-dates">Aug 2021 to May 2025</span>
+                                <span class="role-chevron" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M3.5 5.5L7 9L10.5 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </summary>
+                        <div class="role-body">
+                            <p class="role-meta">Domain Emphasis: Economics · GPA: 3.66</p>
+                            <ul class="role-bullets">
+                                <li>Honors Thesis: co-authored two peer-reviewed papers at IEEE Frontiers in Education 2024 on quantitative assessment of STEM Summer Bridge Programs.</li>
+                                <li>Methods: A/B testing, logistic regression, sentiment analysis.</li>
+                                <li>Coursework: Machine Learning, Data Mining &amp; Analytics, NLP, Database Systems, Software Engineering, Computer Architecture, Algorithmic Economics.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                </div>
+
+                <p class="resume-footer">
+                    Want the full PDF? <a href="Shreya_Gupta_Post_Meta_Final_Resume.pdf" download>Download here</a>.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ====================== RESEARCH & IMPACT ====================== -->
+    <section id="research" class="section section-alt">
+        <div class="section-inner">
+
+            <div class="section-header">
+                <p class="kicker">02 / Research &amp; Impact</p>
+                <h2 class="section-title">Two years teaching Data 100. Two papers at IEEE FIE. A decade in equitable education.</h2>
+            </div>
+
+            <!-- Data 100 to featured because it's directly related and you put 2 years into it -->
+            <div class="data100-feature">
+                <div class="data100-text">
+                    <p class="kicker-small">Featured</p>
+                    <h3 class="feature-title">Teaching Data 100 at UC Berkeley</h3>
+                    <p class="feature-body">
+                        For two years, I taught <strong>Data 100 (Principles &amp; Techniques of Data Science)</strong>, the largest upper-division computer science course on campus at over 1000 students per semester. As Head TA I co-authored exams with faculty, coordinated logistics for the full student body, and led discussions for 200+ students directly across five semesters.
+                    </p>
+                    <p class="feature-body">
+                        I taught the things that show up in my work now: OLS, logistic regression, regularization, gradient descent, cross-validation, EDA, clustering. The teaching shaped how I do data science. You learn what you can&rsquo;t hand-wave past when you have to explain it to a room.
+                    </p>
+                    <p class="feature-body">
+                        <a href="https://drive.google.com/drive/folders/1FpOJmc1QE6DaxknLRrP3MkL253eYBPEn?usp=sharing" target="_blank" rel="noopener" class="inline-link">Browse my teaching materials &rarr;</a>
+                    </p>
+                </div>
+                <div class="data100-images">
+                    <img src="d100.jpeg" alt="Data 100 class photo">
+                    <img src="testimonials.jpeg" alt="Student feedback">
+                </div>
+            </div>
+
+            <!-- Other research/impact items as a grid -->
+            <div class="impact-grid">
+
+                <article class="impact-card">
+                    <p class="kicker-small">Publications</p>
+                    <h4 class="impact-title">Two peer-reviewed papers, IEEE FIE 2024</h4>
+                    <p class="impact-body">
+                        Co-authored two papers at the IEEE Frontiers in Education 2024 Conference in Washington DC on quantitative assessment of STEM Summer Bridge Programs. The studies use data science techniques (A/B testing, logistic regression, sentiment analysis) to demonstrate how bridge programs boost STEM belonging, social confidence, and persistence for underrepresented computing students.
+                    </p>
+                    <img src="fie.png" alt="FIE 2024 research" class="impact-image">
+                </article>
+
+                <article class="impact-card">
+                    <p class="kicker-small">Advocacy</p>
+                    <h4 class="impact-title">CDSS Student Advisory Board</h4>
+                    <p class="impact-body">
+                        Led bimonthly strategic meetings with leadership at Berkeley&rsquo;s College of Computing, Data Science, and Society. Shaped policies on outreach, admissions, peer advising, club recruitment, and alumni experience. Also served as student representative on the Undergraduate Study Committee, contributing to policy development for fair admissions and academic accessibility.
+                    </p>
+                </article>
+
+                <article class="impact-card">
+                    <p class="kicker-small">Speaking</p>
+                    <h4 class="impact-title">TEDx: Hands-On Learning</h4>
+                    <p class="impact-body">
+                        Spoke at TEDx on hands-on, practical learning as the path to equity in STEM education.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=tZuPjT7a32M&amp;ab_channel=TEDxTalks" target="_blank" rel="noopener" class="inline-link">Watch on YouTube &rarr;</a>
+                </article>
+
+                <article class="impact-card">
+                    <p class="kicker-small">Community</p>
+                    <h4 class="impact-title">Teaching in underserved areas</h4>
+                    <p class="impact-body">
+                        Over a decade of teaching kids in underprivileged communities. It&rsquo;s the through-line behind everything else here. Equitable education isn&rsquo;t a phase or a section on a resume for me; it&rsquo;s the thing I&rsquo;ve been doing the longest.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== SKILLS ====================== -->
+    <section id="skills" class="section">
+        <div class="section-inner">
+
+            <div class="section-header">
+                <p class="kicker">03 / Skills</p>
+                <h2 class="section-title">The toolkit, and where the strengths actually live.</h2>
+            </div>
+
+            <div class="skills-layout">
+
+                <div class="skills-block skills-strengths">
+                    <p class="kicker-small">Core strengths</p>
+                    <dl class="skills-list">
+                        <div class="skills-row">
+                            <dt>Experimentation &amp; Causal Inference</dt>
+                            <dd>A/B testing at production scale, metric definition, lever decomposition, observational causal methods.</dd>
+                        </div>
+                        <div class="skills-row">
+                            <dt>Applied AI &amp; ML</dt>
+                            <dd>Image classification, LLM-based pipelines, AI-native analyst workflows (Claude, Gemini, ChatGPT, internal agents).</dd>
+                        </div>
+                        <div class="skills-row">
+                            <dt>Large-Scale Analytics</dt>
+                            <dd>SQL and Python on production-scale data; pipelines, dashboards, behavioral analysis.</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="skills-block">
+                    <p class="kicker-small">Stack</p>
+                    <dl class="skills-list">
+                        <div class="skills-row">
+                            <dt>Languages</dt>
+                            <dd>Python, SQL (Presto, Hive), Java, C, R, JavaScript, HTML, CSS</dd>
+                        </div>
+                        <div class="skills-row">
+                            <dt>Libraries &amp; frameworks</dt>
+                            <dd>Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, PySpark, Matplotlib, Seaborn, Flask</dd>
+                        </div>
+                        <div class="skills-row">
+                            <dt>Tools</dt>
+                            <dd>Jupyter, Git, Spark, LlamaIndex, OpenAI API, Hugging Face, Power BI, Microsoft Fabric</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <div class="skills-block">
+                    <p class="kicker-small">Certifications</p>
+                    <dl class="skills-list">
+                        <div class="skills-row">
+                            <dt>Python for Research</dt>
+                            <dd>Harvard University (edX): language processing, social network analysis, prediction from tri-axial accelerometer data.</dd>
+                        </div>
+                        <div class="skills-row">
+                            <dt>Statistical Thinking for DS &amp; Analytics</dt>
+                            <dd>Columbia University (edX): data collection, predictive/exploratory analysis, inference, visualization, Bayesian methods.</dd>
+                        </div>
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== BEYOND THE WORK ====================== -->
+    <section id="about" class="section section-alt">
+        <div class="section-inner">
+
+            <div class="section-header">
+                <p class="kicker">04 / Beyond the Work</p>
+                <h2 class="section-title">The rest of me.</h2>
+            </div>
+
+            <div class="about-layout">
+
+                <div class="about-text">
+                    <p class="about-para">
+                        I care about equitable education and have followed through on it for over ten years, through teaching, research, and advocacy. I play guitar and sing (karaoke nights happen), I&rsquo;m serious about tennis, and I host chai-tasting sessions because I think the best collaboration happens when people actually know each other.
+                    </p>
+                    <p class="about-para">
+                        I&rsquo;m most interested in working with people who care about what they&rsquo;re building and treat data science as a craft rather than a checkbox. If that&rsquo;s you, I&rsquo;d love to talk.
+                    </p>
+                    <p class="about-ps">
+                        Quick note: I love analyzing TV shows. If you spot references on this page, they&rsquo;re from <em>Grey&rsquo;s Anatomy</em> and <em>You</em>.
+                    </p>
+                </div>
+
+                <div class="about-photos">
+                    <img src="award.jpg" alt="award">
+                    <img src="guitar.png" alt="guitar">
+                    <img src="sport.png" alt="tennis">
+                    <img src="study.png" alt="studying">
+                    <img src="speech.JPG" alt="speech">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== FOOTER ====================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-copy">&copy; 2026 Shreya Gupta</p>
+            <div class="footer-links">
+                <a href="Shreya_Gupta_Post_Meta_Final_Resume.pdf" download>Resume</a>
+                <span class="footer-sep">·</span>
+                <a href="https://www.linkedin.com/in/shreyagupta268" target="_blank" rel="noopener">LinkedIn</a>
+                <span class="footer-sep">·</span>
+                <a href="mailto:shreyagupta268@gmail.com">Email</a>
+                <span class="footer-sep">·</span>
+                <a href="https://github.com/shreyagxpta" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>
