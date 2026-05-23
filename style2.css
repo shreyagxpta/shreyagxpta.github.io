@@ -296,14 +296,49 @@ img {
     margin-left: auto;
 }
 
-.hero-image {
+.hero-photos {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-photo {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 4px;
     filter: grayscale(15%) contrast(1.02);
-    position: relative;
+}
+
+/* Bottom image stays put. Top image fades in and out, revealing the bottom. */
+.hero-photo-1 {
     z-index: 1;
+}
+
+.hero-photo-2 {
+    z-index: 2;
+    animation: heroTopFade 12s ease-in-out infinite;
+}
+
+@keyframes heroTopFade {
+    0%, 40% {
+        opacity: 1;
+    }
+    50%, 90% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-photo-2 {
+        animation: none;
+    }
 }
 
 .hero-image-frame {
@@ -644,6 +679,15 @@ img {
     margin-bottom: 0;
 }
 
+.role-image {
+    width: 100%;
+    max-width: 360px;
+    border-radius: 4px;
+    margin-top: 24px;
+    border: 1px solid var(--border);
+    filter: grayscale(10%) contrast(1.02);
+}
+
 .resume-footer {
     font-family: var(--font-body);
     font-size: 14px;
@@ -725,6 +769,23 @@ img {
     border: 1px solid var(--border);
 }
 
+.data100-figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.data100-figure figcaption {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    padding-left: 14px;
+    border-left: 2px solid var(--accent);
+}
+
 /* ---------- Impact grid (Research & Impact) ---------- */
 
 .impact-grid {
@@ -769,6 +830,48 @@ img {
     border-radius: 4px;
     margin-top: 8px;
     border: 1px solid var(--border);
+}
+
+.impact-thumb-link {
+    position: relative;
+    display: block;
+    margin: 8px 0 16px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.impact-thumb {
+    margin: 0;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.impact-thumb-link:hover .impact-thumb {
+    filter: brightness(0.85);
+}
+
+.impact-thumb-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(12, 13, 16, 0.85);
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    padding-left: 3px;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.impact-thumb-link:hover .impact-thumb-play {
+    background: var(--accent);
+    color: var(--bg);
+    transform: translate(-50%, -50%) scale(1.05);
 }
 
 .impact-links {
@@ -884,9 +987,11 @@ img {
     transform: translateY(-2px);
 }
 
-.about-photos img:nth-child(5) {
+/* First photo (your-photo.jpg) spans full width as a featured banner */
+.about-photos .about-photo-feature {
     grid-column: span 2;
-    aspect-ratio: 2.5 / 1;
+    aspect-ratio: 2.2 / 1;
+    object-position: center 30%;
 }
 
 /* ---------- Footer ---------- */
@@ -1048,10 +1153,6 @@ img {
         flex-direction: column;
         text-align: center;
         gap: 16px;
-    }
-
-    .about-photos img:nth-child(5) {
-        grid-column: span 2;
     }
 }
 
