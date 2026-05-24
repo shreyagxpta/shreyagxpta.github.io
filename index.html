@@ -22,18 +22,25 @@
     <nav class="nav">
         <div class="nav-inner">
             <a href="#home" class="nav-brand">SG</a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#meta">DS @ Meta</a></li>
                 <li><a href="#research">Research &amp; Impact</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#about">Beyond the Work</a></li>
             </ul>
-            <a href="Shreya_Gupta_Post_Meta_Final_Resume.pdf" class="nav-cta" download>
-                <span>Resume</span>
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                    <path d="M3 6L6 9L9 6M6 9V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
+            <div class="nav-right">
+                <a href="Shreya_Gupta_Post_Meta_Final_Resume.pdf" class="nav-cta" download>
+                    <span>Resume</span>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                        <path d="M3 6L6 9L9 6M6 9V2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                    <span class="nav-toggle-bar"></span>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -67,16 +74,18 @@
 
             <div class="hero-image-wrap">
                 <!--
-                    Hero photos: two images crossfade slowly between each other.
-                    `hero-lego.jpg` is the Lego/Meta milestone photo (upload to repo root when ready).
-                    Until you upload it, the second slot falls back to honors.png so nothing breaks.
-                    Recommended aspect: roughly square, at least 600px on the short side.
+                    Hero photos: three images cycle on an 18s loop.
+                    1) meta_store.jpg - Lego AI glasses store milestone (with caption)
+                    2) presenting.jpeg - speaking at IEEE FIE 2024
+                    3) honors.png - portrait
                 -->
                 <div class="hero-photos">
-                    <img src="presenting.jpeg" alt="Presenting research at IEEE Frontiers in Education 2024" class="hero-photo hero-photo-1">
-                    <img src="hero-lego.jpg" alt="With the Meta-issued 500-piece Lego set, marking the team's AI glasses milestone" class="hero-photo hero-photo-2" onerror="this.onerror=null; this.src='honors.png';">
+                    <img src="meta_store.jpg" alt="Holding the Lego set of the Meta AI glasses store, wearing the glasses" class="hero-photo hero-photo-1">
+                    <img src="presenting.jpeg" alt="Presenting research at IEEE Frontiers in Education 2024" class="hero-photo hero-photo-2">
+                    <img src="honors.png" alt="Portrait of Shreya Gupta" class="hero-photo hero-photo-3">
                 </div>
                 <div class="hero-image-frame" aria-hidden="true"></div>
+                <p class="hero-caption" aria-hidden="true">Holding the Lego set of the Meta AI glasses store, wearing the glasses. A team milestone gift.</p>
             </div>
         </div>
     </section>
@@ -502,6 +511,9 @@
             <div class="about-layout">
 
                 <div class="about-text">
+                    <p class="about-para">
+                        I&rsquo;d rather just show you what I&rsquo;m like and let you decide.
+                    </p>
 
                     <p class="about-para">
                         Outside work, the things I keep showing up for: <strong>physical activities</strong>, which I try lots of for fun. I&rsquo;ve done taekwondo, archery, tennis, badminton, and I&rsquo;m circling back to yoga right now. <strong>Singing and guitar</strong>, often enough that my friends have learned which karaoke songs are mine. <strong>Painting</strong>, which I just started and am genuinely bad at, but it intrigues me and I keep coming back to it. And <strong>food</strong>, always. I have a small appetite and a big interest in what I&rsquo;m eating; most of my life sort of organizes itself around the next good meal.
