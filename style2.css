@@ -149,6 +149,59 @@ img {
     color: var(--bg);
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Hamburger button: hidden on desktop, shown on mobile via media query below */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    border-radius: 5px;
+    width: 38px;
+    height: 36px;
+    padding: 0;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    transition: border-color 0.2s ease;
+}
+
+.nav-toggle:hover {
+    border-color: var(--accent);
+}
+
+.nav-toggle-bar {
+    width: 18px;
+    height: 1.5px;
+    background: var(--text);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    transform-origin: center;
+}
+
+/* Hamburger turns into an X when menu is open */
+.nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(5.5px) rotate(45deg);
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-5.5px) rotate(-45deg);
+}
+
+/* When the menu is open on mobile, lock body scroll */
+body.nav-open {
+    overflow: hidden;
+}
+
 /* ---------- Kickers (small all-caps labels in mono) ---------- */
 
 .kicker {
@@ -311,33 +364,74 @@ img {
     object-fit: cover;
     border-radius: 4px;
     filter: grayscale(15%) contrast(1.02);
+    opacity: 0;
 }
 
-/* Bottom image stays put. Top image fades in and out, revealing the bottom. */
+/* Three photos on a shared 18s loop, each visible ~5s with 1s crossfades. */
 .hero-photo-1 {
-    z-index: 1;
+    animation: heroPhoto1 18s ease-in-out infinite;
+    z-index: 3;
 }
 
 .hero-photo-2 {
+    animation: heroPhoto2 18s ease-in-out infinite;
     z-index: 2;
-    animation: heroTopFade 12s ease-in-out infinite;
 }
 
-@keyframes heroTopFade {
-    0%, 40% {
-        opacity: 1;
-    }
-    50%, 90% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.hero-photo-3 {
+    animation: heroPhoto3 18s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* Photo 1: visible 0-5s (0% to 28%), fades out 5-6s (28% to 33%) */
+@keyframes heroPhoto1 {
+    0%, 28% { opacity: 1; }
+    33%, 95% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Photo 2: fades in 5-6s (28% to 33%), visible 6-11s (33% to 61%), fades out 11-12s (61% to 67%) */
+@keyframes heroPhoto2 {
+    0%, 28% { opacity: 0; }
+    33%, 61% { opacity: 1; }
+    67%, 100% { opacity: 0; }
+}
+
+/* Photo 3: fades in 11-12s (61% to 67%), visible 12-17s (67% to 95%), fades out 17-18s (95% to 100%) */
+@keyframes heroPhoto3 {
+    0%, 61% { opacity: 0; }
+    67%, 95% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Caption shows only while photo 1 is visible */
+.hero-caption {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 0;
+    right: 0;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--text-secondary);
+    text-align: left;
+    margin: 0;
+    padding-left: 14px;
+    border-left: 2px solid var(--accent);
+    max-width: 360px;
+    opacity: 0;
+    animation: heroPhoto1 18s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-photo-2 {
+    .hero-photo,
+    .hero-caption {
         animation: none;
+    }
+    .hero-photo-1,
+    .hero-caption {
+        opacity: 1;
     }
 }
 
@@ -1071,6 +1165,18 @@ img {
         margin: 0 auto;
         max-width: 320px;
         order: -1;
+        margin-bottom: 60px; /* leave room for absolutely-positioned caption */
+    }
+
+    .hero-caption {
+        font-size: 12px;
+        text-align: center;
+        padding-left: 0;
+        border-left: none;
+        border-top: 2px solid var(--accent);
+        padding-top: 10px;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .work-grid {
@@ -1096,12 +1202,51 @@ img {
         gap: 40px;
     }
 
+    .nav-toggle {
+        display: flex;
+    }
+
     .nav-links {
-        gap: 16px;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: min(320px, 80vw);
+        background: var(--bg-alt);
+        border-left: 1px solid var(--border);
+        padding: 88px 32px 32px;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 8px;
+        flex: none;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 99;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-links.is-open {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        width: 100%;
     }
 
     .nav-links a {
-        font-size: 13px;
+        font-family: var(--font-display);
+        font-size: 22px;
+        color: var(--text);
+        display: block;
+        padding: 12px 0;
+        width: 100%;
+        border-bottom: 1px solid var(--border);
+        letter-spacing: -0.01em;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent);
     }
 }
 
@@ -1133,10 +1278,6 @@ img {
     .nav-inner {
         padding: 12px 16px;
         gap: 12px;
-    }
-
-    .nav-links {
-        display: none;
     }
 
     .role-summary {
