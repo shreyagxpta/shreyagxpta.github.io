@@ -813,9 +813,17 @@ body.nav-open {
     border-bottom: 1px solid var(--border);
 }
 
+/* Top: text on the left, featured captioned image on the right */
+.data100-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: start;
+    margin-bottom: 32px;
+}
+
 .data100-text {
-    max-width: var(--container-narrow);
-    margin-bottom: 40px;
+    max-width: 100%;
 }
 
 .feature-title {
@@ -854,44 +862,46 @@ body.nav-open {
     border-bottom-color: var(--accent);
 }
 
-/* Images: 2-column grid. Captioned figure spans both columns. */
-.data100-images {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    align-items: start;
+/* Featured captioned figure on the top-right */
+.data100-feature-figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
-.data100-images img {
+.data100-feature-figure img {
     width: 100%;
     border-radius: 4px;
     filter: grayscale(10%) contrast(1.02);
     border: 1px solid var(--border);
     object-fit: cover;
-    max-height: 360px;
 }
 
-.data100-figure {
-    grid-column: 1 / -1;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    align-items: center;
-}
-
-.data100-figure img {
-    max-height: 420px;
-}
-
-.data100-figure figcaption {
+.data100-feature-figure figcaption {
     font-family: var(--font-display);
     font-style: italic;
-    font-size: 15px;
+    font-size: 14.5px;
     line-height: 1.55;
     color: var(--text-secondary);
     padding-left: 14px;
     border-left: 2px solid var(--accent);
+}
+
+/* Bottom: two images side by side */
+.data100-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.data100-bottom img {
+    width: 100%;
+    border-radius: 4px;
+    filter: grayscale(10%) contrast(1.02);
+    border: 1px solid var(--border);
+    object-fit: cover;
+    max-height: 340px;
 }
 
 /* ---------- Impact grid (Research & Impact) ---------- */
@@ -1197,11 +1207,12 @@ body.nav-open {
         grid-template-columns: 1fr;
     }
 
-    .data100-images {
+    .data100-top {
         grid-template-columns: 1fr;
+        gap: 32px;
     }
 
-    .data100-figure {
+    .data100-bottom {
         grid-template-columns: 1fr;
     }
 
