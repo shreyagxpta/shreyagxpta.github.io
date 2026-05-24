@@ -382,42 +382,44 @@ body.nav-open {
     opacity: 0;
 }
 
-/* Three photos on a shared 12s loop: each visible ~3.3s with ~0.7s crossfades. */
+/* Three photos on a 15s loop: meta_store gets 6s, others ~4s, with ~1s crossfades. */
 .hero-photo-1 {
-    animation: heroPhoto1 12s linear infinite;
+    animation: heroPhoto1 15s linear infinite;
     z-index: 3;
 }
 
 .hero-photo-2 {
-    animation: heroPhoto2 12s linear infinite;
+    animation: heroPhoto2 15s linear infinite;
     z-index: 2;
 }
 
 .hero-photo-3 {
-    animation: heroPhoto3 12s linear infinite;
+    animation: heroPhoto3 15s linear infinite;
     z-index: 1;
 }
 
-/* Each photo: visible for 30% of cycle, fades out over next ~5%, hidden, fades back. */
+/* Photo 1: visible 0-6s (0% to 40%), fades out 6-7s (40% to 47%) */
 @keyframes heroPhoto1 {
-    0%, 28% { opacity: 1; }
-    33% { opacity: 0; }
-    95% { opacity: 0; }
+    0%, 40% { opacity: 1; }
+    47% { opacity: 0; }
+    93% { opacity: 0; }
     100% { opacity: 1; }
 }
 
+/* Photo 2: fades in 6-7s (40% to 47%), visible 7-11s (47% to 73%), fades out 11-12s (73% to 80%) */
 @keyframes heroPhoto2 {
     0% { opacity: 0; }
-    28% { opacity: 0; }
-    33%, 61% { opacity: 1; }
-    67% { opacity: 0; }
+    40% { opacity: 0; }
+    47%, 73% { opacity: 1; }
+    80% { opacity: 0; }
     100% { opacity: 0; }
 }
 
+/* Photo 3: fades in 11-12s (73% to 80%), visible 12-14s (80% to 93%), fades out 14-15s (93% to 100%) */
 @keyframes heroPhoto3 {
     0% { opacity: 0; }
-    61% { opacity: 0; }
-    67%, 95% { opacity: 1; }
+    73% { opacity: 0; }
+    80%, 93% { opacity: 1; }
     100% { opacity: 0; }
 }
 
@@ -438,7 +440,7 @@ body.nav-open {
     padding: 2px 0 2px 10px;
     border-left: 2px solid var(--accent);
     opacity: 0;
-    animation: heroPhoto1 12s linear infinite;
+    animation: heroPhoto1 15s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
